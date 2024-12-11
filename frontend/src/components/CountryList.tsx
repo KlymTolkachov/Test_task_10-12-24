@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Typography,
   List,
   ListItem,
   ListItemText,
   ListItemButton,
-} from '@mui/material';
+} from "@mui/material";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5001';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const CountryList = () => {
   const [countries, setCountries] = useState([]);
@@ -18,7 +18,7 @@ const CountryList = () => {
     const getCountries = async () => {
       try {
         const resp = await axios.get(
-          `${BASE_URL}/countries/AvailableCountries`,
+          `${BASE_URL}/countries/AvailableCountries`
         );
         setCountries(resp.data);
       } catch (e) {
@@ -30,18 +30,12 @@ const CountryList = () => {
 
   return (
     <>
-      <Typography
-        variant="h4"
-        gutterBottom
-      >
+      <Typography variant="h4" gutterBottom>
         Country List
       </Typography>
       <List>
-        {countries.map(country => (
-          <ListItem
-            key={country.countryCode}
-            disablePadding
-          >
+        {countries.map((country) => (
+          <ListItem key={country.countryCode} disablePadding>
             <ListItemButton
               component={Link}
               to={`/country/${country.countryCode}`}

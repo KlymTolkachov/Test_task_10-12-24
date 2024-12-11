@@ -14,9 +14,15 @@ export class CountryService {
   }
 
   async getCountryInfo(countryCode: string) {
-    const borderCountries = await this.getBorderCountries(countryCode);
-    const population = await this.getPopulationCounts(countryCode);
-    const flag = await this.getCountryFlag(countryCode);
+    const [
+      borderCountries,
+      population,
+      flag
+    ] = await Promise.all([
+      this.getBorderCountries(countryCode),
+      this.getPopulationCounts(countryCode),
+      this.getCountryFlag(countryCode)
+    ])
 
     if (!borderCountries || !flag || !population) {
       throw new NotFoundException('Can not get info about country');

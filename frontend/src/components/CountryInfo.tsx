@@ -23,7 +23,7 @@ import {
 
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5001";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const CountryInfo = () => {
   const [country, setCountry] = useState([]);

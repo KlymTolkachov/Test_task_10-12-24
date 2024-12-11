@@ -22,21 +22,14 @@ This project consists of both a **frontend** and a **server**. Follow the instru
    cd server/country-info-app
    ```
 
-2. **Create .env file using .env.sample template and define the necessary environment variables.** 
-   Example:   
-
-   - PORT=5000
-   - DATE_NAGER_API_URL=https://date.nager.at/api/v3
-   - COUNTRIESNOW_SPACE_API_URL=https://countriesnow.space/api/v0.1
-
-3. 	**Install dependencies:**
+2. **Install dependencies:**
    Use npm to install the necessary dependencies:
 
    ```bash
    npm install
    ```
 
-4.	**Start the backend server:**
+3. **Start the backend server:**
    Once the dependencies are installed and the .env file is configured, start the backend server:
 
     ```bash
@@ -52,19 +45,14 @@ This project consists of both a **frontend** and a **server**. Follow the instru
       cd frontend
      ```
 
-2. **Create .env file using .env.sample template and define the necessary environment variables.** 
-   Example:   
-
-   - VITE_BASE_URL=http://localhost:5001
-
-3. **Install dependencies:
+2. **Install dependencies:
    Use npm to install the necessary dependencies:
 
    ```bash
    npm install
    ```
 
-4. Start the frontend app:
+3. Start the frontend app:
    Once the dependencies are installed and the .env file is configured, start the frontend app:
 
     ```bash
@@ -74,8 +62,8 @@ This project consists of both a **frontend** and a **server**. Follow the instru
 
 Additional Notes
 
-	•	Frontend: The frontend is built using Vite, which will run the app on http://localhost:3000 (or the specified port).
-	•	Backend: The backend is an Express server (or another framework, depending on your setup) that will run on http://localhost:5000 (or the specified port).
+	•	Frontend: The frontend is built using Vite, which will run the app on http://localhost:5173 (or the specified port).
+	•	Backend: The backend is an Express server that will run on http://localhost:5001 (or the specified port).
 	•	Make sure that both servers are running to ensure the frontend and backend can communicate correctly.
 
 
