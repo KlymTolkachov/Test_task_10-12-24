@@ -20,7 +20,6 @@ const CountryList = () => {
         const resp = await axios.get(
           `${BASE_URL}/countries/AvailableCountries`,
         );
-        console.log(resp.data);
         setCountries(resp.data);
       } catch (e) {
         console.log(e);

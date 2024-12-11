@@ -33,7 +33,7 @@ export class CountryService {
     const {
       data: { data: population },
     } = await axios.post(
-      `https://countriesnow.space/api/v0.1/countries/population`,
+      `${process.env.COUNTRIESNOW_SPACE_API_URL}/countries/population`,
       { country: name },
     );
 
@@ -63,7 +63,7 @@ export class CountryService {
         data: { flag: flagUrl },
       },
     } = await axios.post(
-      'https://countriesnow.space/api/v0.1/countries/flag/images',
+      `${process.env.COUNTRIESNOW_SPACE_API_URL}/countries/flag/images`,
       { iso2: countryCode },
     );
 

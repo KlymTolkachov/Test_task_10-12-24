@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import {
   LineChart,
   Line,
@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 import {
   Container,
   Box,
@@ -19,11 +19,11 @@ import {
   List,
   ListItem,
   ListItemText,
-} from '@mui/material';
+} from "@mui/material";
 
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5001';
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5001";
 
 const CountryInfo = () => {
   const [country, setCountry] = useState([]);
@@ -35,7 +35,6 @@ const CountryInfo = () => {
         const resp = await axios.post(`${BASE_URL}/countries/CountryInfo`, {
           countryCode: code,
         });
-        console.log(resp.data);
         setCountry(resp.data);
       } catch (e) {
         console.log(e);
@@ -48,11 +47,7 @@ const CountryInfo = () => {
     <Container maxWidth="lg">
       {country && country.borderCountries && (
         <>
-          <Typography
-            variant="h4"
-            component="h1"
-            gutterBottom
-          >
+          <Typography variant="h4" component="h1" gutterBottom>
             {country.population.country}
           </Typography>
 
@@ -65,25 +60,18 @@ const CountryInfo = () => {
             />
           </Card>
 
-          <Typography
-            variant="h5"
-            component="h2"
-            gutterBottom
-          >
+          <Typography variant="h5" component="h2" gutterBottom>
             Border Countries
           </Typography>
-          <Box
-            component="div"
-            mb={4}
-          >
+          <Box component="div" mb={4}>
             <List>
-              {country.borderCountries.map(el => (
+              {country.borderCountries.map((el) => (
                 <ListItem key={el.countryCode}>
                   <ListItemText
                     primary={
                       <Link
                         to={`/country/${el.countryCode}`}
-                        style={{ textDecoration: 'none', color: 'inherit' }}
+                        style={{ textDecoration: "none", color: "inherit" }}
                       >
                         {el.officialName}
                       </Link>
@@ -94,33 +82,26 @@ const CountryInfo = () => {
             </List>
           </Box>
 
-          <Typography
-            variant="h5"
-            component="h2"
-            gutterBottom
-          >
+          <Typography variant="h5" component="h2" gutterBottom>
             Population Over Time
           </Typography>
           <Box sx={{ marginBottom: 4 }}>
-            <ResponsiveContainer
-              width="100%"
-              height={400}
-            >
+            <ResponsiveContainer width="100%" height={400}>
               <LineChart data={country.population.populationCounts}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
                   dataKey="year"
                   label={{
-                    value: 'Year',
-                    position: 'insideBottomRight',
+                    value: "Year",
+                    position: "insideBottomRight",
                     offset: -5,
                   }}
                 />
                 <YAxis
                   label={{
-                    value: 'Population',
+                    value: "Population",
                     angle: -90,
-                    position: 'insideLeft',
+                    position: "insideLeft",
                   }}
                 />
                 <Tooltip />
