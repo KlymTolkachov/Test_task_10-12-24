@@ -20,50 +20,56 @@ This project consists of both a **frontend** and a **server**. Follow the instru
 
    ```bash
    cd server/country-info-app
+   ```
 
 2. **Create .env file using .env.sample template and define the necessary environment variables.** 
    Example:   
 
-   PORT=5000
-   DATE_NAGER_API_URL=https://date.nager.at/api/v3
-   COUNTRIESNOW_SPACE_API_URL=https://countriesnow.space/api/v0.1
+   - PORT=5000
+   - DATE_NAGER_API_URL=https://date.nager.at/api/v3
+   - COUNTRIESNOW_SPACE_API_URL=https://countriesnow.space/api/v0.1
 
-3. 	**Install dependencies:
+3. 	**Install dependencies:**
    Use npm to install the necessary dependencies:
 
    ```bash
    npm install
+   ```
 
-4.	Start the backend server:
+4.	**Start the backend server:**
    Once the dependencies are installed and the .env file is configured, start the backend server:
 
     ```bash
     npm run start
+    ```
 
 
 ###  Frontend Setup
 
-1.	Navigate to the frontend directory:
+1. **Navigate to the frontend directory:**
 
-   ```bash
-   cd frontend
+      ```bash
+      cd frontend
+     ```
 
 2. **Create .env file using .env.sample template and define the necessary environment variables.** 
    Example:   
 
-   VITE_BASE_URL=http://localhost:5001
+   - VITE_BASE_URL=http://localhost:5001
 
-3. 	**Install dependencies:
+3. **Install dependencies:
    Use npm to install the necessary dependencies:
 
    ```bash
    npm install
+   ```
 
-4.	Start the frontend app:
+4. Start the frontend app:
    Once the dependencies are installed and the .env file is configured, start the frontend app:
 
     ```bash
     npm run dev
+    ```
 
 
 Additional Notes
